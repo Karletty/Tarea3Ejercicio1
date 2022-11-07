@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="https://kit.fontawesome.com/b711723059.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="row nav-bar">
+            <di class="col">
+                <img src="../img/logo.png" alt="logo" class="logo">
+            </di>
+        </div>
+    </header>
+    <main class="login">
+        <form class="row g-3 needs-validation" novalidate name="frm-register" id="frm-register">
+            <h2 id="frmType">SignUp</h2>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="name" required name="email" placeholder="example@email.com"
+                    autocomplete="username">
+                <label for="name">Email</label>
+                <div class="invalid-feedback" id="invalid-email">Debe ingresar un email válido que no se haya registrado anteriormente</div>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="pass" required name="pass" placeholder="Password"
+                    autocomplete="new-password">
+                <label for="pass">Contraseña</label>
+                <div class="invalid-feedback" id="invalid-pass">La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito,
+                    al menos una minúscula y al menos una mayúscula.</div>
+            </div>
+            <div class="form-floating" id="container-repeat-pass">
+                <input type="password" class="form-control" id="pass2" required name="pass2" placeholder="Password"
+                    autocomplete="new-password">
+                <label for="pass2">Repetir contraseña</label>
+                <div class="invalid-feedback" id="invalid-pass2">La contraseña debe coincidir</div>
+            </div>
+            <div class="col w-50 d-flex flex-column align-items-center">
+                <button type="submit" class="btn w-auto">Ingresar</button>
+            </div>
+            <div class="col w-50 d-flex flex-column align-items-center">
+                <span id="info">¿Ya tiene una cuenta?</span>
+                <button type="button" class="btn w-auto" id="login">Iniciar sesión</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <div class="d-flex justify-content-center">
+            <a href="https://twitter.com/RestauranteKam1" class="nav-item">
+                <i class="fa-brands fa-square-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/Kamakura-119775071447915/">
+                <i class="fa-brands fa-square-facebook"></i>
+            </a>
+            <a href="https://chat.whatsapp.com/HC03vwgUz3O3EXMsdamGBk">
+                <i class="fa-brands fa-square-whatsapp"></i>
+            </a>
+        </div>
+        <div class="d-flex justify-content-center">
+            Derechos reservados &copy; 2022 Pagina creada por: Chávez.J, Elías.K, Meléndez.A, Montes.A, Velazco.P
+        </div>
+    </footer>
+    <script src="./js/register.js"></script>
+</body>
+
+</html>
