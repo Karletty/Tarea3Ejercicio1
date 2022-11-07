@@ -124,6 +124,10 @@ footer {
     color: var(--secondary-color);
 }
 
+header, footer, main {
+    max-width: 100%;
+}
+
 .back1 {
     background: url("../img/pngwing.com\ \(7\).png") no-repeat;
     background-size: cover;
@@ -288,4 +292,8 @@ a {
 .cart-img {
     height: auto;
     width: 150px;
+}
+
+#frmReservation {
+    height: 100%;
 }
