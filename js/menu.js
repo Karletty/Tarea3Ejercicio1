@@ -174,7 +174,7 @@ const start = () => {
     getPlates();
 }
 
-if (localStorage.getItem('register')) {
+if (sessionStorage.getItem('register')) {
     start();
 } else {
     window.location.pathname = `/index.html`;
@@ -192,7 +192,7 @@ btnOrder.addEventListener('click', () => {
         return { name, cant }
     })
     if (shoppingCart.length > 0) {
-        let idCliente = localStorage.getItem('id');
+        let idCliente = sessionStorage.getItem('id');
         const options = {
             method: 'POST',
             body: JSON.stringify({ order, idCliente, total })

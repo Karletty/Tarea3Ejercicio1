@@ -59,7 +59,7 @@ const verifyUser = async (email, pass) => {
     users.forEach(user => {
         if (user.email === email && user.pass === pass) {
             valid = true;
-            localStorage.setItem('id', user.id);
+            sessionStorage.setItem('id', user.id);
         }
     })
     return valid;
@@ -121,7 +121,7 @@ const registerUser = async (email, pass, pass2) => {
     }
     if (valid) {
         pushUser(user).then(data => {
-            alert('El usuario se ha registrado con éxito');
+            alert('El usuario se ha registrado con éxito, ingrese sesión');
             email.value = '';
             pass.value = '';
             pass2.value = '';
@@ -132,7 +132,7 @@ const registerUser = async (email, pass, pass2) => {
 const signupUser = async (email, pass) => {
     let verify = await verifyUser(email.value, pass.value);
     if (verify) {
-        localStorage.setItem('register', true);
+        sessionStorage.setItem('register', true);
         window.location.pathname = `/pages/home.html`;
     }
     else {
@@ -172,6 +172,6 @@ frmRegister.addEventListener('submit', (e) => {
 
 });
 
-if (localStorage.getItem('register')) {
+if (sessionStorage.getItem('register')) {
     window.location.pathname = `/pages/home.html`;
 }

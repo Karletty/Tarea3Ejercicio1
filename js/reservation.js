@@ -31,11 +31,11 @@ const validateDate = (date, hour) => {
 }
 
 const modifyHour = (key, hourString, cantPeople, cantTables, previousClients) => {
-    if (previousClients.includes({ id: localStorage.getItem('id'), cant: cantPeople })) {
+    if (previousClients.includes({ id: sessionStorage.getItem('id'), cant: cantPeople })) {
         alert('Ya tiene una reservación a esta hora');
     } else {
         let newCant = cantTables - 1;
-        previousClients.push({ id: localStorage.getItem('id'), cant: cantPeople })
+        previousClients.push({ id: sessionStorage.getItem('id'), cant: cantPeople })
         const options1 = {
             method: 'PUT',
             body: JSON.stringify({ cant: newCant })
@@ -64,7 +64,7 @@ const addHour = (key, hourString, cantPeople, initialData) => {
         ...initialData,
         [hourString]: {
             availableTables: mesas,
-            idClients: [{ id: localStorage.getItem('id'), cant: cantPeople }]
+            idClients: [{ id: sessionStorage.getItem('id'), cant: cantPeople }]
         },
     }
     const options = {
@@ -89,7 +89,7 @@ const addDay = (dateString, hourString, cantPeople) => {
         hours: {
             [hourString]: {
                 availableTables: mesas,
-                idClients: [{ id: localStorage.getItem('id'), cant: cantPeople }]
+                idClients: [{ id: sessionStorage.getItem('id'), cant: cantPeople }]
             }
         }
     }
@@ -150,7 +150,7 @@ const start = () => {
     })
 }
 
-if (localStorage.getItem('register')) {
+if (sessionStorage.getItem('register')) {
     start();
 } else {
     window.location.pathname = `/index.html`;
